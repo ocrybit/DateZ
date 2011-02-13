@@ -15,6 +15,5 @@ sys.puts(now.toString());
 sys.puts(nowZ.toString());
 
 //note that timezone abbreviations are omitted unless you explicitly specify with setTimezoneOffset
-
 nowZ.setTimezoneOffset(-540, 'JST');
 sys.puts(nowZ.toString());
