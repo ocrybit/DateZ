@@ -21,7 +21,7 @@ DateZ has all the methods the Built-in Date object has, and works exactly the sa
 
 timezonOffset should be equivalent to the value you can get from Date.getTimezoneOffset().
 
-	cf) GMT-0800 => 480, GMT+0900 => -540
+	i.e. GMT-0800 => 480, GMT+0900 => -540
 
 timezoneAbbreviation is optional, and can be any string value. (You can even set "Mars Daylight savind Time" if you wish.) If not given here, timezone abbreviations will be omitted from the return values of any string related methods, such as toString(), toLocalString() and toTimeString(). Timezone values and their abbreviations are in one-to-many relationships, so there isn't an absolute way to pick out just one abbreviation unless you specify which abbreviation you mean to use.
 
@@ -42,7 +42,6 @@ timezoneAbbreviation is optional, and can be any string value. (You can even set
 	sys.puts(nowZ.toString());
 
 	//note that timezone abbreviations are omitted unless you explicitly specify with setTimezoneOffset
-	
 	nowZ.setTimezoneOffset(-540, 'JST');
 	sys.puts(nowZ.toString());
 
