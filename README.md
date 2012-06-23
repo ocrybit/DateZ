@@ -25,24 +25,24 @@ timezonOffset should be equivalent to the value you can get from Date.getTimezon
 
 timezoneAbbreviation is optional, and can be any string value. (You can even set "Mars Daylight savind Time" if you wish.) If not given here, timezone abbreviations will be omitted from the return values of any string related methods, such as toString(), toLocalString() and toTimeString(). Timezone values and their abbreviations are in one-to-many relationships, so there isn't an absolute way to pick out just one abbreviation unless you specify which abbreviation you mean to use.
 
-	var sys = require('sys');	
+	var util = require('util');	
 	var DateZ = require('DateZ').DateZ;
 
 	//suppose your remote server is somewhere in PST zone, which is represented as GMT-0800
 	var now = new Date(); //built-in
 	var nowZ = new DateZ(); //Z stands for time"Z"one btw
 	
-	sys.puts(now.toString());
-	sys.puts(nowZ.toString());
+	util.puts(now.toString());
+	util.puts(nowZ.toString());
 	
 	//now change the timezone of nowZ for JST(GMT+0900)
 	nowZ.setTimezoneOffset(-540);
 	
-	sys.puts(now.toString());
-	sys.puts(nowZ.toString());
+	util.puts(now.toString());
+	util.puts(nowZ.toString());
 
 	//note that timezone abbreviations are omitted unless you explicitly specify with setTimezoneOffset
 	nowZ.setTimezoneOffset(-540, 'JST');
-	sys.puts(nowZ.toString());
+	util.puts(nowZ.toString());
 
 and that's about it for now.
